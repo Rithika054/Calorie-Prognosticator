@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Exercise Recommendation</title>
+
+  <!-- Add your CSS styling here -->
+  <style>
+    body {
+      /* Use the URL of your background image here */
+      background-image: url('https://via.placeholder.com/1920x1080'); /* Replace with your image URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Style for the content wrapper */
+    .content-wrapper {
+      background-color: rgba(255, 255, 255, 0.9); /* Background color with transparency */
+      padding: 20px; /* Add padding inside the border */
+      border: 2px solid #000; /* Border style */
+      border-radius: 10px; /* Rounded corners */
+    }
+
+    /* Style for the input boxes and labels */
+/* Style for the input boxes and labels */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px; /* Add margin between input boxes */
+}
+
+/* Style for labels */
+.input-field label {
+  margin-bottom: 3px; /* Reduce margin below labels */
+  font-size: 14px; /* Reduce font size of labels */
+}
+
+/* Style for input fields */
+.input-field input {
+  width: 100%; /* Make input fields full width */
+  padding: 5px; /* Add padding for better spacing */
+  border: 1px solid #ccc; /* Add a border for input fields */
+  border-radius: 5px; /* Rounded corners for input fields */
+  box-sizing: border-box; /* Include padding and border in the width */
+  font-size: 14px; /* Reduce font size of input fields */
+}
+
+
+
+    h1.header {
+      font-size: 36px;
+      color: #ff5722;
+    }
+
+    h5.header {
+      font-size: 24px;
+      color: #333;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .input-field {
+      margin-bottom: 20px;
+    }
+
+    button[type="submit"] {
+      background-color: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #e64a19;
+    }
+
+    .row.center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center">Exercise Recommendation</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">
+          Predict the amount of Calories and recommend a good Exercise
+        </h5>
+      </div>
+      <div class="row">
+        <form action='/predict' method="post" class="col s12">
+          <div class="row">
+            <div class="input-field col s4">
+              <label for="first_name"><b>Gender</b></label>
+              <input placeholder="Gender" name="Gender" id="first_name" type="text" class="validate">
+            </div>
+            <div class="input-field col s4">
+              <label for="last_name"><b>Age</b></label>
+              <input id="_name" name="Age" placeholder="Age" type="text" class="validate">
+            </div>
+            <div class="input-field col s4">
+              <label for="_name"><b>Height</b></label>
+              <input id="_name" name="Height" placeholder="Height" type="text" class="validate">
+            </div>
+            <div class="input-field col s4">
+              <label for="_name"><b>Weight</b></label>
+              <input id="_name" name="Weight" placeholder="Weight" type="text" class="validate">
+            </div>
+            <div class="input-field col s4">
+              <label for="_name"><b>Duration</b></label>
+              <input id="last_name" name="Duration" placeholder="Duration" type="text" class="validate">
+            </div>
+          </div>
+          <div class="row center">
+            <button type="submit">Predict Probability</button>
+          </div>
+        </form>
+      </div>
+      <br>
+      <br>
+      {{pred}}<br>
+      {{pred2}}<br>
+    </div>
+  </div>
+</body>
+</html>
